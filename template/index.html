@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos em sequência</title>
+    <link rel="stylefheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="interaction.js"></script>
+</head>
+
+<body>
+    <h1>Eventos em sequência</h1>
+    <p id="intro">
+        A presente aplicação tem como objetivo calcular como é o comportamento de um determinado ativo após uma sequência de dias em queda ou alta.
+        As estatísticas apresentadas são parametrizadas a partir das seguintes variáveis:
+        <ul>
+            <li>Ativo</li>
+            <li>Quantidade de dias em sequência</li>
+            <li>Direção do movimento</li>
+            <li>Período de cálculo do Z-Score</li>
+            <li>Threshold do Z-Score</li>
+        </ul>
+    </p>
+    <div id="params">
+        <h2> Parâmetros</h2>
+        <form action="/pagina-processa-dados-do-form" method="post">
+            <div>
+                <label for="asset">Asset name:</label>
+                <input type="text" id="asset" />
+            </div>
+            <div>
+                <label for="sequence">Sequence of events:</label>
+                <input type="number" id="sequence" min="1"/>
+            </div>
+            <div>
+                <label for="direction">Direction:</label>
+                <select id="direction" name="direction">
+                    <option value="1">High</option>
+                    <option value="0">Low</option>
+                </select>
+            </div>
+            <div>
+                <label for="zscore_periods">Z-Score periods:</label>
+                <input type="number" id="zscore_periods" min="1"/>
+            </div>
+            <div>
+                <label for="zscore_th">Z-Score Threshold:</label>
+                <input type="number" id="zscore_th" step="0.1" value="0.0"/>
+            </div>
+        </form>
+    </div>
+    <div ip="stat results">
+        <h2> Aqui vão os resultados</h2>
+    </div>
+</body>
+
+</html>
